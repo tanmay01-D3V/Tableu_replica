@@ -1,0 +1,48 @@
+<html>
+<head>
+    <title>Browser Discovery</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Browser Behavior Experiment</h1>
+
+    <input type="text" id="name" placeholder="Enter your name">
+    <button onclick="saveData()">Save</button>
+
+    <p id="output"></p>
+
+    <hr>
+
+    <h3>Final Observation</h3>
+    <ul>
+        <li>Viewport changed readability on mobile</li>
+        <li>Layout changed at 600px and 900px</li>
+        <li>Name stored in localStorage</li>
+        <li>Website worked without internet</li>
+    </ul>
+</div>
+
+<script>
+    let visits = localStorage.getItem("visits") || 0;
+    visits++;
+    localStorage.setItem("visits", visits);
+
+    let lastVisit = new Date();
+    localStorage.setItem("lastVisit", lastVisit);
+
+    document.getElementById("output").innerText =
+        "Visits: " + visits + " | Last Visit: " + lastVisit;
+
+    function saveData() {
+        let name = document.getElementById("name").value;
+        localStorage.setItem("username", name);
+        alert("Saved in localStorage");
+    }
+</script>
+
+</body>
+</html>
