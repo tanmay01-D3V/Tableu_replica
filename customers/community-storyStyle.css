@@ -6,15 +6,8 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', sans-serif;
-    color: #333;
     line-height: 1.6;
-    background: linear-gradient(to bottom, #bdd2e5 0%, #ffffff 100%);
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    color: #333;
 }
 
 .header {
@@ -111,251 +104,180 @@ body {
     cursor: pointer;
 }
 
+/* Hero Section */
 .hero {
+    background-image: url("https://www.tableau.com/sites/default/files/2022-11/my-tableau-story-community-hero-bubbles_11.png");
+    color: white;
+    padding: 80px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
 
-    padding: 60px 0;
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
 }
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
-.label {
-    display: inline-block;
-    background: #d1d1d1;
-    color: black;
-    padding: 4px 12px;
-    border-radius: 3px;
-    font-size: 12px;
+.hero-label {
+    font-size: 14px;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     margin-bottom: 20px;
+    opacity: 0.9;
 }
 
 .hero h1 {
-    font-size: 36px;
-    color: #1f2b4d;
-    margin-bottom: 20px;
-    line-height: 1.3;
+    font-size: 56px;
     font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
 }
 
-.hero p {
+.hero h2 {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+/* Main Content */
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+.intro-section {
+    text-align: left;
+    margin-bottom: 60px;
+}
+
+.intro-section h3 {
+    font-size: 40px;
+    color: #02225d;
+    margin-bottom: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.intro-section p {
     font-size: 16px;
-    color: #555;
-    margin-bottom: 24px;
-    line-height: 1.6;
-}
-
-.link-arrow {
-    color: #1f5aa6;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-    transition: color 0.2s;
-}
-
-.link-arrow:hover {
-    color: #174a8a;
-}
-
-.hero-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.featured-stories {
-    padding: 60px 0;
-
-}
-
-.stories-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 30px;
-}
-
-.story-card {
-    background: None;
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    outline: none;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-
-.story-card.large {
-    height: 100%;
-}
-
-.story-cards-right {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-.card-image {
-    position: relative;
-    overflow: hidden;
-}
-
-.card-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.card-content {
-    padding: 24px;
-}
-
-.card-content h3 {
-    font-size: 20px;
-    color: #1f2b4d;
-    margin-bottom: 12px;
-    line-height: 1.4;
-    font-weight: 600;
-}
-
-.card-content p {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 16px;
-    line-height: 1.6;
-}
-
-.filters {
-    background: transparent;
-    padding: 30px 0;
-}
-
-.filter-buttons {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-}
-
-.filter-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.filter-label {
-    font-size: 12px;
     color: #666;
-    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.filter-btn {
-    background: #fff;
-    border: 1px solid #ccc;
-    padding: 8px 20px;
-    border-radius: 4px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.filter-btn:hover {
-    border-color: #1f5aa6;
-    color: #1f5aa6;
-}
-
-.customer-grid {
-    padding: 60px 0;
-}
-
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.customer-card {
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-    cursor: pointer;
-}
-
-.customer-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-}
-
-.customer-card .card-image {
-    height: 400px;
-    position: relative;
-}
-
-.customer-card .card-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.logo-overlay {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 12px 20px;
-    border-radius: 4px;
-    font-weight: 600;
+.intro-section .highlight {
     font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-top: 30px;
+}
+
+/* Webinars Section */
+.webinars-section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
     color: #333;
 }
 
-.company-logo-small {
-    margin-bottom: 12px;
+.webinar-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-.company-logo-small img {
-    height: 30px;
-    width: auto;
+.webinar-table thead {
+    background: #f8f9fa;
 }
 
-.tableau-next-logo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 36px;
-    font-weight: 300;
-    color: #7b68ee;
-}
-
-.load-more {
-    text-decoration: none;
-    text-align: center;
-    margin-top: 40px;
-    color: #1f5aa6;
+.webinar-table th {
+    padding: 18px 24px;
+    text-align: left;
     font-weight: 600;
-}
-.btn-load-more {
-    background: transparent;
-    border: none;
-    color: #1f5aa6;
-    padding: 12px 40px;
     font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e5e5e5;
 }
 
+.webinar-table td {
+    padding: 24px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: top;
+}
 
-.btn-load-more:hover {
+.webinar-table tr:last-child td {
+    border-bottom: none;
+}
+
+.webinar-table tr:hover {
+    background: #fafbfc;
+}
+
+.webinar-title {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.webinar-description {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.webinar-duration {
+    color: #888;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.watch-link {
+    color: #1f77b4;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.watch-link:hover {
+    color: #166299;
     text-decoration: underline;
 }
 
@@ -414,6 +336,8 @@ body {
     background: #f0f7ff;
 }
 
+
+/* Footer */
 .footer {
     display: flex;
     background: #f8f9fa;
@@ -435,8 +359,8 @@ body {
 
 .footer-columns {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 60px;
     margin-bottom: 40px;
 }
 
@@ -548,62 +472,26 @@ body {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
-@media (max-width: 1024px) {
-    .nav-wrapper {
-        flex-wrap: wrap;
-    }
-
-    .main-nav {
-        order: 3;
-        width: 100%;
-        margin-top: 20px;
-        justify-content: flex-start;
-    }
-
-    .hero-content {
-        grid-template-columns: 1fr;
-    }
-
-    .stories-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .footer-columns {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
+/* Responsive */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 28px;
+        font-size: 36px;
     }
 
-    .cards-grid {
-        grid-template-columns: 1fr;
+    .hero h2 {
+        font-size: 18px;
     }
 
-    .footer-columns {
-        grid-template-columns: 1fr;
+    nav {
+        display: none;
     }
 
-    .footer-bottom {
-        flex-direction: column;
-        gap: 20px;
-        align-items: flex-start;
+    .webinar-table {
+        font-size: 14px;
     }
 
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .btn-primary-large,
-    .btn-secondary-large {
-        width: 100%;
-        max-width: 300px;
+    .webinar-table td,
+    .webinar-table th {
+        padding: 16px;
     }
 }
